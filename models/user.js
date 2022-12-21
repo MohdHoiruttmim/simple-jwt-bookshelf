@@ -3,7 +3,7 @@ const { DataTypes } = Sequelize;
 
 const connect = require('../config/config');
 
-const User = connect.define('user', {
+const User = connect.define('users', {
   fname:{
     type: DataTypes.STRING,
     allowNull: false,
