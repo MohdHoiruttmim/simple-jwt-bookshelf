@@ -39,7 +39,11 @@ const loginUser = async (req, res) => {
   const validPassword = await bcrypt.compare(password, user.password);
   if(!validPassword) return res.status(400).json({ message: 'Email or password is incorrect' });
 
-  const token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET);
+  // hanya mengirimkan id user saja
+  // const token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET);
+
+  // mengirimkan semua data user
+  const token = jwt.sign({ user }, process.env.TOKEN_SECRET);
   res.header('auth-token', token)
      .json({message: 'User logged in successfully', token: token});
   // res.status(200).json({ message: 'User logged in successfully' });
