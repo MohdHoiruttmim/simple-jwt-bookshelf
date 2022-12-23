@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const { DataTypes } = Sequelize;
 
-const connect = require('../config/config');
+const connect = require('../database/config');
 
 const User = connect.define('users', {
   fname:{
