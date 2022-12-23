@@ -10,7 +10,10 @@ var booksRouter = require('./routes/books');
 var app = express();
 const cors = require('cors');
 
-const connect = require('./config/config');
+const connect = new Sequelize('bookself', 'root', '', {
+  host: 'localhost',
+  dialect: 'mysql',
+});
 require('dotenv').config();
 
 app.use(logger('dev'));
