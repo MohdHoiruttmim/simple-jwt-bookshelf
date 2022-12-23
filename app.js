@@ -6,6 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var booksRouter = require('./routes/books');
+const verify = require('./routes/auth/auth');
 
 var app = express();
 const connect = require('./database/config');
@@ -32,7 +33,7 @@ testConenction();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/books', booksRouter);
+app.use('/books', verify, booksRouter);
 
 const User = require('./models/user');
 app.get('/user/:id', async (req, res) => {  
