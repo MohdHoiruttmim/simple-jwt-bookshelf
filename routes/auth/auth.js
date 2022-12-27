@@ -18,11 +18,11 @@ const verify = (req, res, next) => {
     // const verified = jwt.verify(JWTToken, process.env.TOKEN_SECRET);
     
     // verifikasi data user masih ada di database atau tidak
-    const user = User.findByPk(verified.id);
-    console.log(user);
+    // const user = User.findByPk(verified.id);
+    // console.log(user);
 
     // untuk mengirimkan user ke next() agar bisa dipakai pada proses selanjutnya
-    req.user = user;
+    req.user = verified;
     // console.log(verified);
     next();
   } catch (error) {

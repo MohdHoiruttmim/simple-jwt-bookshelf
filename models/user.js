@@ -20,6 +20,10 @@ const User = connect.define('users', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  refresh_token:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   date:{
     type: DataTypes.DATE,
     allowNull: false,

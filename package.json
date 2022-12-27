@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "node app.js",
-    "watch": "nodemon app.js"
+    "watch": "supervisor app.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,8 @@
   "devDependencies": {
     "express-generator": "^4.16.1",
     "nodemon": "^2.0.20",
-    "sequelize-cli": "^6.5.2"
+    "sequelize-cli": "^6.5.2",
+    "supervisor": "^0.12.0"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
